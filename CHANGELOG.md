@@ -1,5 +1,11 @@
 ## v0.2.0 (2024-12-16)
 
+### Fix
+
+- enhance workflow by explicitly checking out the triggering tag and adding a delay before pushing tags
+
+## v0.2.0 (2024-12-16)
+
 ### Feat
 
 - initial release
