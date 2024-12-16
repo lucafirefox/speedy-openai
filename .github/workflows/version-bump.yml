@@ -43,3 +43,4 @@ jobs:
           sleep 5  # Add a small delay
           git tag ${{ steps.bump.outputs.new_version }}
           git push origin ${{ steps.bump.outputs.new_version }}
+          
