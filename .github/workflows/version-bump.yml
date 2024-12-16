@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  bump-version:
+  test-and-bump:
     if: "!startsWith(github.event.head_commit.message, 'bump:')"
     runs-on: ubuntu-latest
     permissions:
@@ -23,13 +23,23 @@ jobs:
         with:
           python-version: '3.10'
           
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          
       - name: Install dependencies
         run: |
+          poetry install
           python -m pip install --upgrade pip
           pip install commitizen
-        
+
+      - name: Run tests
+        run: |
+          poetry run pytest
+          
       - name: Create bump and changelog
         id: bump
+        if: success() # Only run if tests pass
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
@@ -40,6 +50,7 @@ jobs:
           echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
           
       - name: Push changes and tags
+        if: success() # Only run if previous steps succeed
         run: |
           git push
           git push --tags
