@@ -29,10 +29,16 @@ jobs:
           pip install commitizen
         
       - name: Create bump and changelog
+        id: bump
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          cz bump --yes --changelog
+          # Capture the version that commitizen creates
+          NEW_VERSION=$(cz bump --yes --changelog | grep -o 'v[0-9.]*')
+          echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
           
-      - name: Push changes
-        run: git push origin main --follow-tags --force
+      - name: Push changes and tags
+        run: |
+          git push
+          git tag ${{ steps.bump.outputs.new_version }}
+          git push origin ${{ steps.bump.outputs.new_version }}
