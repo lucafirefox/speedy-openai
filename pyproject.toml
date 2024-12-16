@@ -40,12 +40,12 @@ aiohttp = "^3.11.10"
 
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "1.4.1"
+version = "0.1.0"
 tag_format = "v$version"
 version_files = [
     "pyproject.toml:version",
-    "speedy_openai/__init__.py:__version__",
-    ]
+    "speedy_openai/__init__.py:__version__"
+]
 update_changelog_on_bump = true
 changelog_incremental = true
 bump_message = "bump: $current_version → $new_version"
