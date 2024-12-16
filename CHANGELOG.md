@@ -1,3 +1,9 @@
+## v0.2.1 (2024-12-16)
+
+### Fix
+
+- update version bump workflow to use force push with tags
+
 ## v0.2.0 (2024-12-16)
 
 ## v1.0.0 (2024-12-16)
