@@ -5,6 +5,7 @@ on:
     branches:
       - main
 
+      
 jobs:
   bump-version:
     if: "startsWith(github.event.head_commit.message, 'bump:')"
