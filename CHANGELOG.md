@@ -1,5 +1,11 @@
 ## v0.2.0 (2024-12-16)
 
+### Feat
+
+- update publish workflow to include cache clearing and version check
+
+## v0.2.0 (2024-12-16)
+
 ### Fix
 
 - enhance workflow by explicitly checking out the triggering tag and adding a delay before pushing tags
