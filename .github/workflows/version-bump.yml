@@ -33,8 +33,13 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          NEW_VERSION=$(cz bump --yes --changelog)
-          echo "new_version=${NEW_VERSION}" >> $GITHUB_OUTPUT
+          # Run cz bump and capture the output
+          VERSION_OUTPUT=$(cz bump --yes --changelog)
+          # Extract the version number
+          NEW_VERSION=$(echo "$VERSION_OUTPUT" | grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+')
+          echo "new_version=$NEW_VERSION" >> $GITHUB_OUTPUT
           
-      - name: Push changes
-        run: git push --follow-tags
+      - name: Push changes and tags
+        run: |
+          git push
+          git push --tags
