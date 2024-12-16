@@ -1,0 +1,39 @@
+line-length = 120
+target-version = "py310"
+
+exclude = [
+    "tests/*", # exclude tests
+]
+
+[lint]
+
+select = [
+    "ALL", # include all the rules, including new ones
+]
+
+ignore = [
+    #### modules
+    "ANN",
+    "D",
+    "FBT",
+    #### specific rules
+    "INP001",
+    "PD901", # general df
+    "N8", # because of pydantic fields
+    "C901",
+    "PLR0913",
+    "COM812",
+    "ISC001",
+    "ARG001", # because of context object in aws lambda
+    "ERA001", # commented-out code
+    "TRY003", # specifying long messages outside the exception class
+    "TID252", # relative imports
+]
+
+[lint.pylint]
+max-statements = 75
+
+[format]
+quote-style = "double"
+docstring-code-format = true
+
