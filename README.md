@@ -1,11 +1,21 @@
+<div align="center">
+
+<img src="docs/logo.png" alt="Speedy OpenAI Logo" width="200"/>
+
 # Speedy OpenAI
 
 [![Python](https://img.shields.io/pypi/pyversions/speedy-openai.svg)](https://pypi.org/project/speedy-openai/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-
 A high-performance, asynchronous Python client for the OpenAI API with built-in rate limiting and concurrency control.
+
+</div>
+
+## Demo
+
+<img src="docs/demo.gif" alt="Speedy OpenAI Demo" width="600"/>
+
 
 ## Features
 
@@ -209,22 +219,6 @@ The test suite includes:
 - Concurrency tests
 - Error handling tests
 
-### Running Specific Tests
-
-Run specific test categories:
-```bash
-# Run only rate limiter tests
-poetry run pytest tests/test_rate_limiter.py
-
-# Run only client tests
-poetry run pytest tests/test_client.py
-
-# Run with verbose output
-poetry run pytest -v
-
-# Run with coverage report
-poetry run pytest --cov=speedy_openai
-```
 
 ### Writing Tests
 
