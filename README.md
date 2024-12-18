@@ -8,7 +8,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-A high-performance, asynchronous Python client for the OpenAI API with built-in rate limiting and concurrency control.
+A high-performance, asynchronous Python client for the OpenAI API with built-in rate limiting and concurrency control. 
 
 </div>
 
@@ -239,4 +239,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## Support
 
 For issues, questions, or contributions, please create an issue in the GitHub repository.
+
+## Credits
+
+[Blogpost](https://www.google.com) by Villoro
 
